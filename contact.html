@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="images/logo2.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Book Design Services</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();
+    
+                var name = $('#name').val();
+                var email = $('#email').val();
+    
+                // Check if the name is within the 25-character limit and does not contain numbers
+                if (name.length > 25 || /\d/.test(name)) {
+                    alert('Please type your real full name.');
+                    return;
+                }
+    
+                if (!name || !email) {
+                    alert('Please fill up the Name and Email fields.');
+                    return;
+                }
+    
+                // Check if the email has a valid format
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Invalid Email Address. Please enter a valid email.');
+                    return;
+                }
+    
+                $.ajax({
+                    url: 'https://script.google.com/macros/s/AKfycbxLbeufEo6wxYwIdt7Koi8k5RZGHZ1MbtrNY2W5B6wCjHB37dymoGPzGE68PxrAsB8T_A/exec',
+                    method: 'POST',
+                    data: $('#contact-form').serialize(),
+                    success: function () {
+                        alert('Message sent successfully!');
+                        $('#contact-form')[0].reset();
+                    },
+                    error: function () {
+                        alert('Error sending message. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+             
+    
+</head>
+
+<body oncontextmenu="return false;">
+
+    <!-- Navigation -->
+    <nav>
+        <img src="images/logo.png" alt="">
+        <div class="navigation">
+            <ul>
+                <i id="menu-close" class="fas fa-times"></i>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.png" alt="">
+        </div>
+    </nav>
+
+    <!-- Home -->
+
+    <section id="about-home">
+        <h2>Contact Us</h2>
+        
+    </section>
+
+    <section id="contact">
+        <div class="getin">
+            <h2>Get In Touch</h2>
+            <p>Looking for book cover designs? Contact us or fill up the form!</p>
+
+            <div class="getin-details">
+                <h3>Address</h3>
+                <div>
+                    <i class="fa fa-home get"></i>
+                    <p>W375+4J8, R.T.Lim St, Zamboanga, Zamboanga del Sur</p>
+                </div>
+
+                <h3>Phone</h3>
+                <div>
+                    <i class="fas fa-phone-alt get"></i>
+                    <p>09728645637</p>
+                </div>
+
+                <h3>Email Address</h3>
+                <div>
+                    <i class="fa fa-envelope-open-text get"></i>
+                    <p>cbd.services01@gmail.com</p>
+                </div>
+
+                <h3>Follow Us</h3>
+                <div class="pro-links">
+                    <a href="https://www.facebook.com/profile.php?id=61553930622159&mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+                    <a href="https://instagram.com/coverbookdesignservices?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form">
+            <h4>Let's Connect</h4>
+            <p>Message us for your book cover designs! Make your work more easier!</p>
+            <form id="contact-form">
+                <div class="form-row">
+                    <input type="text" id="name" name="Name" placeholder="Your Name">
+                    <input type="text" id="email" name="Email" placeholder="Email">
+                </div>
+                <div class="form-col">
+                    <textarea name="Message" id="" cols="30" rows="8" placeholder="How can we help you?"></textarea>
+                </div>
+                <div class="form-col">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15843.130884371338!2d122.0496409947745!3d6.9165607820266315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x325041ddc653c873%3A0xe6618d24408bbb26!2sZamboanga%20Peninsula%20Polytechnic%20State%20University!5e0!3m2!1sen!2sph!4v1701563794230!5m2!1sen!2sph" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- copyright section -->
+
+    <footer>
+        <div class="copyright">
+            <p>Copyright @2023 All rights reserves | This template is made by CBD Services</p>
+            <div class="pro-links">
+                <a href="https://www.facebook.com/profile.php?id=61553930622159&mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/coverbookdesignservices?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                <a href="mailto:cbd.services01@gmail.com"><i class="fa fa-envelope-open-text get"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        $('#menu-btn').click(function(){
+            $('nav .navigation ul').addClass('active')
+        });
+        $('#menu-close').click(function(){
+            $('nav .navigation ul').removeClass('active')
+        });
+    </script>
+
+
+</body>
+
+</html>
